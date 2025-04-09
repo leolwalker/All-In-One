@@ -31,7 +31,7 @@ const {
     TextInputBuilder, 
     TextInputStyle 
 } = require('discord.js');
-const { serverConfigCollection } = require('../../mongodb'); 
+const { serverConfigCollection, applicationCollection } = require('../../database/mongoose'); 
 const { 
     createApplication, 
     deleteApplication, 
@@ -40,7 +40,6 @@ const {
     addQuestion, 
     removeQuestion
 } = require('../../models/applications');
-const { applicationCollection } = require('../../mongodb');
 const cmdIcons = require('../../UI/icons/commandicons');
 module.exports = {
     data: new SlashCommandBuilder()
