@@ -116,13 +116,13 @@ async function getHelpMenu({ client, guild }) {
     .setLabel("Invite Me")
     .setStyle(ButtonStyle.Link)
     .setEmoji('1238429920573784074')
-    .setURL("https://discord.com/api/oauth2/authorize?client_id=1238431297974566972&permissions=8&scope=bot+applications.commands");
+    .setURL("https://discord.com/oauth2/authorize?client_id=918947835016273950");
 
   const voteButton = new ButtonBuilder()
     .setLabel("Vote Me")
     .setStyle(ButtonStyle.Link)
     .setEmoji('1238429509795971116')
-    .setURL("https://top.gg/servers/1143415296862978058/vote");
+    .setURL("https://top.gg/bot/918947835016273950");
 
   const buttonsRow = new ActionRowBuilder().addComponents([supportButton, inviteButton, voteButton]);
 
@@ -132,36 +132,35 @@ async function getHelpMenu({ client, guild }) {
     .setImage(`https://share.creavite.co/663f19346f72a4507e459a7b.gif`)
         .addFields([
         {
-          name: "__**<a:loading:1238429820933640283> Features [1-9]**__",
-          value: `>>> <:points:1238429964613713960> Admin 
-<:users:1238430170151387186> Anime 
-<:hammer:1238429706454568982> Automod 
-<:cash:1238429069092196352> Economy 
-<:fun:1238429593417945098> Fun 
-<:notification:1238429897920221294> Giveaway 
+          name: "__**Features [1-9]**__",
+          value: `>>> 👤 Admin 
+🙆‍♂️ Anime 
+🤖 Automod 
+💰 Economy 
+🙌 Fun 
+🎉 Giveaway 
 <:link:1238429779624071219> Invite 
-<:bot:1238429045243252818> Information`,
+ℹ️ Information`,
           inline: true
         },
         {
-          name: "__**<a:loading:1238429820933640283> Features [10-18]**__",
+          name: "__**Features [10-18]**__",
           value: `>>> <:gear:1238429625055444993> Moderation 
-<:fav_songs:1238429574677790810> Music 
-<:lock:1238429844803686460> Owner 
-<:com:1238429485817135226> Social 
-<:chart:1238429306938462238> Statistics 
-<:claim:1238429350655823912> Suggestions 
-<:transcript:1238430085795545139> Ticket 
-<:search:1238430047615058001> Utility `,
+🎵 Music 
+👥 Social 
+📈 Statistics 
+🙋‍♂️ Suggestions 
+📩 Ticket 
+🔨 Utility `,
           inline: true
         }
         ])
-    .setDescription(`<a:loading:1238429820933640283> **Emerald GX is here to help. \n > It is a multipourpose bot for your discord. \n > It can help you to build a Super server.**
-<a:loading:1238429820933640283> __**BOT INFO**__
-> <:circle:1238429329231314974> Prefix: \`/\`
-> <:circle:1238429329231314974> Discord.js Version: \`v14.15.2\`
-> <:circle:1238429329231314974> Running on \`Node v20.13.1\`
-> <:circle:1238429329231314974> Made by \`friday.su\``);
+    .setDescription(`>ᴗ< **Pogy is here to help. \n > A multipurpose and fully customisable discord bot.**
+ⓘ __**BOT INFO**__
+↪ Prefix: \`/\`
+↪ Discord.js Version: \`v14.15.2\`
+↪ Running on \`Node v20.13.1\`
+↪ Made by \`leowxlker\``);
 
   return {
     embeds: [embed],
@@ -290,7 +289,7 @@ function getSlashCategoryEmbeds(client, category) {
       const subCmds = cmd.slashCommand.options?.filter((opt) => opt.type === "SUB_COMMAND");
       const subCmdsString = subCmds?.map((s) => s.name).join(", ");
 
-      return `<:arrow_gx:1239184074992779296>\`/${cmd.name}\`\n <:circle:1238429329231314974> ${cmd.description} \n ${
+      return `➜\`/${cmd.name}\`\n  ${cmd.description} \n ${
         !subCmds?.length ? "" : `❯ **SubCommands [${subCmds?.length}]**: ${subCmdsString}\n`
       } `;
     });
@@ -364,7 +363,7 @@ function getMsgCategoryEmbeds(client, category, prefix) {
 
   while (commands.length) {
     let toAdd = commands.splice(0, commands.length > CMDS_PER_PAGE ? CMDS_PER_PAGE : commands.length);
-    toAdd = toAdd.map((cmd) => `<:arrow_gx:1239184074992779296> \`${prefix}${cmd.name}\`\n <:circle:1238429329231314974> ${cmd.description} \n`);
+    toAdd = toAdd.map((cmd) => `➜ \`${prefix}${cmd.name}\`\n  ${cmd.description} \n`);
     arrSplitted.push(toAdd);
   }
 

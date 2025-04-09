@@ -1,9 +1,9 @@
 module.exports = {
-  OWNER_IDS: ["1203605618745933880"], // Bot owner ID's
-  SUPPORT_SERVER: "https://discord.gg/btQJeGKKHJ", // Your bot support server
+  OWNER_IDS: ["413077365216772116"], // Bot owner ID's
+  SUPPORT_SERVER: "https://discord.gg/yqb8fdnd2d", // Your bot support server
   PREFIX_COMMANDS: {
     ENABLED: true, // Enable/Disable prefix commands
-    DEFAULT_PREFIX: "e!", // Default prefix for the bot
+    DEFAULT_PREFIX: ".", // Default prefix for the bot
   },
   INTERACTIONS: {
     SLASH: true, // Should the interactions be enabled
@@ -43,7 +43,7 @@ module.exports = {
   },
 
   ECONOMY: {
-    ENABLED: true,
+    ENABLED: false,
     CURRENCY: "$",
     DAILY_COINS: 100, // coins to be received by daily command
     MIN_BEG_AMOUNT: 100, // minimum coins to be received when beg command is used
@@ -51,7 +51,7 @@ module.exports = {
   },
 
   MUSIC: {
-    ENABLED: false,
+    ENABLED: true,
     IDLE_TIME: 60, // Time in seconds before the bot disconnects from an idle voice channel
     MAX_SEARCH_RESULTS: 5,
     DEFAULT_SOURCE: "SC", // YT = Youtube, YTM = Youtube Music, SC = SoundCloud
@@ -59,11 +59,11 @@ module.exports = {
     // Refer to https://github.com/freyacodes/Lavalink to host your own lavalink server
     LAVALINK_NODES: [
       {
-        host: "lava.godzillaa.com",
-        port: 25101,
-        password: "dsc.gg/gdz",
+        host: "lava-all.ajieblogs.eu.org",
+        port: 443,
+        password: "https://dsc.gg/ajidevserver",
         id: "Music",
-        secure: false,
+        secure: true,
       },
     ],
   },
@@ -76,7 +76,7 @@ module.exports = {
   },
 
   IMAGE: {
-    ENABLED: true,
+    ENABLED: false,
     BASE_API: "https://strangeapi.hostz.me/api",
   },
 
@@ -104,9 +104,9 @@ module.exports = {
 
   PRESENCE: {
     ENABLED: true, // Whether or not the bot should update its status
-    STATUS: "online", // The bot's status [online, idle, dnd, invisible]
-    TYPE: "WATCHING", // Status type for the bot [PLAYING | LISTENING | WATCHING | COMPETING]
-    MESSAGE: "{members} members", // Your bot status message
+    STATUS: "idle", // The bot's status [online, idle, dnd, invisible]
+    TYPE: "COMPETING", // Status type for the bot [PLAYING | LISTENING | WATCHING | COMPETING]
+    MESSAGE: "Discord >ᴗ<", // Your bot status message
   },
 
   STATS: {
