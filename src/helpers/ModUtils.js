@@ -125,7 +125,11 @@ const logModeration = async (issuer, target, reason, type, data = {}) => {
 
   embed.setFields(fields);
   await addModLogToDb(issuer, target, reason, type.toUpperCase());
-  if (logChannel) logChannel.safeSend({ embeds: [embed] });
+  try {
+    if (logChannel) await logChannel.send({ embeds: [embed] }).catch((ex) => {});
+  } catch (ex) {
+    // Silent catch
+  }
 };
 
 module.exports = class ModUtils {

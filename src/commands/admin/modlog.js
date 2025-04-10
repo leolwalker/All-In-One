@@ -53,8 +53,12 @@ async function setChannel(targetChannel, settings) {
     return "It is already disabled";
   }
 
-  if (targetChannel && !targetChannel.canSendEmbeds()) {
-    return "Ugh! I cannot send logs to that channel? I need the `Write Messages` and `Embed Links` permissions in that channel";
+  if (targetChannel) {
+    const perms = ["ViewChannel", "SendMessages", "EmbedLinks"];
+    const missing = targetChannel.permissionsFor(targetChannel.guild.members.me).missing(perms);
+    if (missing.length > 0) {
+      return `I need the following permissions in ${targetChannel}: ${missing.join(", ")}`;
+    }
   }
 
   settings.modlog_channel = targetChannel?.id;
