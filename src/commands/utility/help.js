@@ -132,11 +132,10 @@ async function getHelpMenu({ client, guild }) {
     .setImage(`https://share.creavite.co/663f19346f72a4507e459a7b.gif`)
         .addFields([
         {
-          name: "__**Features [1-9]**__",
+          name: "__**Features [1-7]**__",
           value: `>>> 👤 Admin 
 🙆‍♂️ Anime 
 🤖 Automod 
-💰 Economy 
 🙌 Fun 
 🎉 Giveaway 
 <:link:1238429779624071219> Invite 
@@ -144,7 +143,7 @@ async function getHelpMenu({ client, guild }) {
           inline: true
         },
         {
-          name: "__**Features [10-18]**__",
+          name: "__**Features [8-14]**__",
           value: `>>> <:gear:1238429625055444993> Moderation 
 🎵 Music 
 👥 Social 
@@ -157,10 +156,10 @@ async function getHelpMenu({ client, guild }) {
         ])
     .setDescription(`>ᴗ< **Pogy is here to help. \n > A multipurpose and fully customisable discord bot.**
 ⓘ __**BOT INFO**__
-↪ Prefix: \`/\`
-↪ Discord.js Version: \`v14.15.2\`
-↪ Running on \`Node v20.13.1\`
-↪ Made by \`leowxlker\``);
+➜ Prefix: \`/\`
+➜ Discord.js Version: \`v14.15.2\`
+➜ Running on \`Node v20.13.1\`
+➜ Made by \`leowxlker\``);
 
   return {
     embeds: [embed],
@@ -237,34 +236,6 @@ const waiter = (msg, userId, prefix) => {
  */
 function getSlashCategoryEmbeds(client, category) {
   let collector = "";
-
-  // For IMAGE Category
-  if (category === "IMAGE") {
-    client.slashCommands
-      .filter((cmd) => cmd.category === category)
-      .forEach((cmd) => (collector += `\`/${cmd.name}\``));
-
-    const availableFilters = client.slashCommands
-      .get("filter")
-      .slashCommand.options[0].choices.map((ch) => ch.name)
-      .join(", ");
-
-    const availableGens = client.slashCommands
-      .get("generator")
-      .slashCommand.options[0].choices.map((ch) => ch.name)
-      .join(", ");
-
-    collector +=
-      "**Available Filters:**\n" + `${availableFilters}` + `*\n\n**Available Generators**\n` + `${availableGens}`;
-
-    const embed = new EmbedBuilder()
-      .setColor(EMBED_COLORS.BOT_EMBED)
-      .setThumbnail(CommandCategory[category]?.image)
-      .setAuthor({ name: `${category} Commands` })
-      .setDescription(collector);
-
-    return [embed];
-  }
 
   // For REMAINING Categories
   const commands = Array.from(client.slashCommands.filter((cmd) => cmd.category === category).values());

@@ -70,7 +70,7 @@ module.exports = {
 
   GIVEAWAYS: {
     ENABLED: true,
-    REACTION: "<:present:1238429986176892938>",
+    REACTION: "📩",
     START_EMBED: "#FF468A",
     END_EMBED: "#FF468A",
   },
@@ -104,8 +104,8 @@ module.exports = {
 
   PRESENCE: {
     ENABLED: true, // Whether or not the bot should update its status
-    STATUS: "idle", // The bot's status [online, idle, dnd, invisible]
-    TYPE: "COMPETING", // Status type for the bot [PLAYING | LISTENING | WATCHING | COMPETING]
+    STATUS: "online", // The bot's status [online, idle, dnd, invisible]
+    TYPE: "WATCHING", // Status type for the bot [PLAYING | LISTENING | WATCHING | COMPETING]
     MESSAGE: "Discord >ᴗ<", // Your bot status message
   },
 
